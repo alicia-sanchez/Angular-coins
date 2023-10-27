@@ -1,8 +1,9 @@
-<div class="modal" *ngIf="selectedCoin">
-    <div class="modal-content">
-      <h1>{{ selectedCoin.name }}</h1>
-      <p>Symbole: {{ selectedCoin.symbol }}</p>
-      <p>Prix en USD: {{ selectedCoin.priceUsd }}</p>
-    </div>
+
+<div class="modal" id="modal1" *ngIf="modal">
+  <div class="modal-content">
+    <label for="modal-2" class="btn-close">X</label>
+    <h1>{{ selectedCoin?.name }}</h1>
+    <p>Symbole: {{ selectedCoin?.symbol }}</p>
+    <p>Prix en USD: {{ selectedCoin?.priceUsd }}</p>
   </div>
-  
+</div>

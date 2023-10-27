@@ -6,6 +6,8 @@ import { ICoins } from '../icoins';
   templateUrl: './coins-modal.component.html',
   styleUrls: ['./coins-modal.component.css']
 })
+
 export class CoinsModalComponent {
-  @Input() selectedCoin: ICoins | null = null;
+  @Input() selectedCoin: ICoins | undefined;
+  @Input() modal: boolean = false;
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ICoins } from '../icoins';
 import { CoinsService } from '../coins.service';
-import { CoinsModalComponent } from '../coins-modal/coins-modal.component';
+
 
 
 @Component({
@@ -10,14 +10,12 @@ import { CoinsModalComponent } from '../coins-modal/coins-modal.component';
   styleUrls: ['./coins.component.css']
 })
 
-
-
 export class CoinsComponent  implements OnInit {
   
   coins:ICoins[]=[];
   search: string = '';
-  selectedCoin: ICoins | null = null;
-
+  selectedCoin: ICoins | undefined;
+  modal: boolean = false;
   
   constructor(private service: CoinsService){}
 
@@ -26,10 +24,10 @@ export class CoinsComponent  implements OnInit {
   }
 
   openModal(coin: ICoins) {
-    console.log('Ouverture de la modal avec la crypto-monnaie :', coin);
     this.selectedCoin = coin;
+    this.modal = true;
   }
-
+  
 
   getAll() {
     this.service.fetchAll().subscribe((data: any) => {
