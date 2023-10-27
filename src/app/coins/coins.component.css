@@ -1,0 +1,97 @@
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    color: #2e2e2f;
+  }
+
+  a{
+    text-decoration: none;
+    color: #2e2e2f;
+  }
+  
+  .crypto-container {
+    display: flex;
+    justify-content: center;
+    background-color:#ebf0f7;
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  .crypto-title {
+    margin-bottom: 1.5rem;    
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .crypto-project {
+    padding: 2rem;
+    max-width: 75%;
+    width: 100%;
+    display: inline-block;
+  }
+  
+  .crypto-subtitle {
+    font-size: 20px;
+  }
+  
+  .crypto-cards {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+  }
+  
+  .crypto-card {
+    cursor: pointer;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+    margin-bottom: 1rem;
+    border: 3px dashed transparent;
+    flex: 0 0 calc(25% - 1rem);
+    margin-right: 1rem;
+  }
+  
+  .crypto-card:hover {
+    box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
+    border-color: rgba(162, 179, 207, 0.2) !important;
+  }
+
+  .symbol_row{
+    display: flex;
+  }
+
+  .crypto-symbol-tag{
+    font-size: .7rem;
+    color:coral;
+    margin-left: .5rem;
+  }
+
+  .crypto_web{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+.btn_more{
+    border: none;
+    padding: .5rem 2rem;
+    border-radius: 25px;
+    float: right;
+}
+
+.btn_more:hover{
+    cursor: pointer;
+    background-color: #ebf0f7;
+}
+
+.btn_web{
+    color: coral;
+}
