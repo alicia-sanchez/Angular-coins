@@ -27,6 +27,8 @@ export class CoinsComponent  implements OnInit {
     this.selectedCoin = coin;
     this.modal = true;
   }
+
+  
   
 
   getAll() {

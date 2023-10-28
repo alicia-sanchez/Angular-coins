@@ -10,4 +10,7 @@ import { ICoins } from '../icoins';
 export class CoinsModalComponent {
   @Input() selectedCoin: ICoins | undefined;
   @Input() modal: boolean = false;
+  hasMaxSupply(coin: ICoins): boolean {
+    return coin.maxSupply !== null;
+  }
 }

@@ -1,9 +1,14 @@
-
-<div class="modal" id="modal1" *ngIf="modal">
+<div class="modal" id="coinModal" *ngIf="modal">
   <div class="modal-content">
-    <label for="modal-2" class="btn-close">X</label>
     <h1>{{ selectedCoin?.name }}</h1>
     <p>Symbole: {{ selectedCoin?.symbol }}</p>
     <p>Prix en USD: {{ selectedCoin?.priceUsd }}</p>
+    <p *ngIf="selectedCoin && hasMaxSupply(selectedCoin)">Max supply : {{selectedCoin.maxSupply | number: '1.0-0'}}</p>
+    <p *ngIf="selectedCoin && !hasMaxSupply(selectedCoin)" class="text-danger">Pas d'offre max</p>
+    <p>Market Cap (USD): {{ selectedCoin?.marketCapUsd | number: '1.0-0' }}$</p>
+    <p>24hr Volume (USD): {{ selectedCoin?.volumeUsd24Hr | number: '1.0-0' }}$</p>
+    <p>Prix (USD): {{ selectedCoin?.priceUsd | number: '1.0-0' }} $</p>
+    <p>VWAP (24hr): {{ selectedCoin?.vwap24Hr }}</p>
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
   </div>
 </div>

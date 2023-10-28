@@ -1,31 +1,35 @@
-<nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand">InfosCrypto</a>
-        <form class="d-flex" role="search">
-            <input name="search" class="form-control me-2" type="text" [(ngModel)]="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
-<div class="crypto-container">
-    <main class="crypto-project">
-        <div class="crypto-title">
-            <h1>Crypto-monnaies</h1>
+<div>
+
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand">InfosCrypto</a>
+            <form class="d-flex" role="search">
+                <input name="search" class="form-control me-2" type="text" [(ngModel)]="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
         </div>
-        <div class="crypto-cards">
-            <div class="crypto-card" *ngFor="let coin of coins | filter: search">
-                <div class="crypto-symbol">
-                    <div class="symbol_row">
-                        <h3 class="crypto-name">{{ coin.name }}</h3>
-                        <h4 class="crypto-symbol-tag">{{ coin.symbol }}</h4>
-                    </div>
-                    <h5 class="crypto-price">{{ coin.priceUsd | number }}</h5>
-                </div>
-                <p class="crypto-rank">Classement : {{ coin.rank }}</p>
-                <a class="btn_web" href="{{ coin.explorer }}" target="_blank">Site</a>
-                <button id="modal1" (click)="openModal(coin)" class="btn_more">Voir plus</button>
+    </nav>
+    <div class="crypto-container">
+        <main class="crypto-project">
+            <div class="crypto-title">
+                <h1>Crypto-monnaies</h1>
             </div>
-        </div>
-    </main>
+            <div class="crypto-cards">
+                <div class="crypto-card" *ngFor="let coin of coins | filter: search">
+                    <div class="crypto-symbol">
+                        <div class="symbol_row">
+                            <h3 class="crypto-name">{{ coin.name }}</h3>
+                            <h4 class="crypto-symbol-tag">{{ coin.symbol }}</h4>
+                        </div>
+                        <h5 class="crypto-price">{{ coin.priceUsd | number }}</h5>
+                    </div>
+                    <p class="crypto-rank">Classement : {{ coin.rank }}</p>
+                    <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#coinModal" (click)="openModal(coin)">Voir</button>
+            <a class="btn_web" href="{{ coin.explorer }}" target="_blank">Site</a>
+           
+                </div>
+            </div>
+        </main>
+    </div>
     <app-coins-modal [modal]="modal" [selectedCoin]="selectedCoin"></app-coins-modal>
 </div>
